@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@users = User.all
+	end
+
+	def show
+	end
+
+	def edit
 	end
 
 	def new
@@ -12,10 +19,16 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "You have registered successfully!"
-      redirect_to login_path
+      redirect_to root_path
     else
       render 'new'
     end
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private
