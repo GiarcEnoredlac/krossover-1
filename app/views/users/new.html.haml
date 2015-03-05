@@ -1,0 +1,12 @@
+= form_for(@user) do |f|
+	= f.label :first_name
+	%div= f.text_field :first_name
+	= f.label :last_name
+	%div= f.text_field :last_name
+	= f.label :email
+	%div= f.email_field :email
+	= f.label :password
+	%div= f.password_field :password
+	= f.label :password_confirmation
+	%div= f.password_field :password_confirmation
+	= f.submit "Create New User"
