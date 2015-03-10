@@ -10,11 +10,11 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'pg'
 gem 'bootstrap_form'
-gem 'bcrypt'
 gem 'faker'
 gem 'fabrication'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+gem 'devise'
 
 group :development do
   gem 'thin'
