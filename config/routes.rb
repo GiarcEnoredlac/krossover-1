@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-	resources :users
-	get 'register', to: "users#new"
-  root to: "users#index"
+  
+  get 'static_pages/index'
+
+  root to: "static_pages#index"
+
+  devise_for :admins
+  devise_for :users
+
 end
