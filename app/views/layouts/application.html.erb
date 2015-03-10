@@ -2,7 +2,6 @@
 <html>
   <%= render 'layouts/head' %>
   <body>
-    <%= render 'layouts/header' %>
     <%= render 'layouts/flash' %>
     <%= render 'layouts/aside' %>
       <div id="content" class="app-content" role="main">
@@ -13,6 +12,8 @@
           ">
           <!-- main -->
           <div class="col">
+                <%= render 'layouts/header' %>
+
             <%= yield %>
           </div>
           
