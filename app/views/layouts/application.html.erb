@@ -4,23 +4,17 @@
   <body>
     <%= render 'layouts/flash' %>
     <%= render 'layouts/aside' %>
-      <div id="content" class="app-content" role="main">
-        <div class="app-content-body ">
-          <div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
-            app.settings.asideFolded = false; 
-            app.settings.asideDock = false;
-          ">
-          <!-- main -->
+    <div id="content" class="app-content" role="main">
+      <div class="app-content-body ">
+        <div class="hbox hbox-auto-xs hbox-auto-sm">
           <div class="col">
-                <%= render 'layouts/header' %>
-
+            <%= render 'layouts/header' %>
+            <%= which_user_signed_in? %>
             <%= yield %>
           </div>
-          
+        </div>
       </div>
     </div>
- 
     <%= render 'layouts/footer' %>
-
   </body>
 </html>

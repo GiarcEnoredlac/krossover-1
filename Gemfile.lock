@@ -217,6 +217,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jquery-turbolinks
+  nokogiri
   pg
   pry
   pry-nav

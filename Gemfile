@@ -14,6 +14,7 @@ gem 'fabrication'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'devise'
+gem 'nokogiri'
 
 group :development do
   gem 'thin'
