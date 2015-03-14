@@ -24,4 +24,11 @@ Rails.application.routes.draw do
     get  'admins/logout', to: 'admins/sessions#destroy', as: :admin_logout
   end  
 
+  # Indexer profile url
+  get 'u', to: 'profiles#index', as: 'profile_index'
+  get 'u/:id', to: 'profiles#show', as: 'profile'
+
+  # Leaderboards url
+  get 'leaderboards', to: 'leaderboards#index'
+
 end

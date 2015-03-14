@@ -1,0 +1,15 @@
+<h1>Leaderboards</h1>
+<table class="table">
+	<thead>
+
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= user.full_name %></td>
+				<td><%= Country.find(user.location).name %></td>
+				<td><%= user.videos_reviewed %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

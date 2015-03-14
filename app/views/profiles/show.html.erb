@@ -1,0 +1,6 @@
+<p>Name: <%= @user.full_name %></p>
+<p>Username: <%= @user.username %></p>
+<p>Email: <%= @user.email %></p>
+<p>Description: <%= @user.description %></p>
+<p>Location: <%= Country.where(id: @user.location).first.name %></p>
+<p>Videos Reviewed: <%= @user.videos_reviewed %></p>
