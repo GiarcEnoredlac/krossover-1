@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_many :video_reviews
+  has_many :statuses
+  has_many :reviews
   
   validates :username, uniqueness: true
   

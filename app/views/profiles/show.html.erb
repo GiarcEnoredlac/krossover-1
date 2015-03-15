@@ -3,5 +3,5 @@
 <p>Email: <%= @user.email %></p>
 <p>Description: <%= @user.description %></p>
 <p>Location: <%= Country.where(id: @user.location).first.name %></p>
-<p>Videos Reviewed: <%= @user.video_reviews.count %></p>
+<p>Videos Reviewed: <%= @user.reviews.count %></p>
 <p>Badges: <%= @user.badges %></p>

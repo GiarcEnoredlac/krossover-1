@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :video_reviews
+  resources :reviews, only: [:new, :create]
 
   get 'static_pages/index'
 
