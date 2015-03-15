@@ -2,9 +2,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	# skip_before_action :require_no_authentication, only: [:new, :create, :cancel]
 	# prepend_before_action :authenticate_scope!, only: [:new, :create, :cancel]
 
-	protected
+	def create
+    @user = build_resource # Needed for Merit
+    super
+  end
 
-	# def sign_up(resource_name, resource)
-
-	# end
+  def update
+    @user = resource # Needed for Merit
+    super
+  end
 end

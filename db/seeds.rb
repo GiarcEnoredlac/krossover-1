@@ -20,9 +20,10 @@ User.create(first_name: "Michael",
 						email: "mmcdevi1@gmail.com",
 						password: "password",
 						description: Faker::Lorem.paragraph(2),
-						location: "USA" )
+						location: 1,
+						videos_reviewed: 100 )
 
-125.times do
+100.times do
 	User.create(first_name: Faker::Name.first_name, 
 							last_name: Faker::Name.last_name,
 							username: Faker::Internet.domain_word,

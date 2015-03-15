@@ -16,6 +16,7 @@ gem 'jquery-turbolinks'
 gem 'devise'
 gem 'nokogiri'
 gem 'paperclip'
+gem 'merit'
 
 group :development do
   gem 'thin'

@@ -4,29 +4,38 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
  
 
-	# #Allow Devise to add custom fields in database
- #  before_action :configure_devise_permitted_parameters, if: :devise_controller?
- #  protected
- #  def configure_devise_permitted_parameters
- #    registration_params = [:full_name,
- #                           :email, 
- #                           :password, 
- #                           :password_confirmation]
+	#Allow Devise to add custom fields in database
+  before_action :configure_devise_permitted_parameters, if: :devise_controller?
+  protected
+  def configure_devise_permitted_parameters
+    registration_params = [:first_name,
+                           :last_name,
+                           :username,
+                           :email, 
+                           :location,
+                           :videos_reviewed,
+                           :password, 
+                           :password_confirmation]
 
- #    if params[:action] == 'update'
- #      devise_parameter_sanitizer.for(:account_update) { 
- #        |u| u.permit(registration_params << :full_name,
- #        																		:password, 
- #                                            :password_confirmation, 
- #                                            :current_password)
- #      }
- #    elsif params[:action] == 'create'
- #      devise_parameter_sanitizer.for(:sign_up) { 
- #        |u| u.permit(registration_params) 
- #      }
- #    end
- #  end
- #  # End Devise ############# 
+    if params[:action] == 'update'
+      devise_parameter_sanitizer.for(:account_update) { 
+        |u| u.permit(registration_params << :first_name,
+                                            :last_name,
+                                            :username,
+                                            :email, 
+                                            :location,
+                                            :videos_reviewed,
+        																		:password, 
+                                            :password_confirmation, 
+                                            :current_password)
+      }
+    elsif params[:action] == 'create'
+      devise_parameter_sanitizer.for(:sign_up) { 
+        |u| u.permit(registration_params) 
+      }
+    end
+  end
+  # End Devise ############# 
 
   def after_sign_in_path_for(resource)
     if current_admin

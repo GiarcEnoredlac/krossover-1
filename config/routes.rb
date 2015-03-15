@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :video_reviews
+
   get 'static_pages/index'
 
   root to: "static_pages#index"
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
  
   devise_scope :user do
     get  '/register', to: 'users/registrations#new', as: :register
-    get  '/dashboard/profile/edit', to: 'users/registrations#edit', as: :edit
+    get  '/profile/edit', to: 'users/registrations#edit', as: :edit
 
     get  '/login', to: 'users/sessions#new', as: :login   
     get  '/logout', to: 'users/sessions#destroy', as: :logout
