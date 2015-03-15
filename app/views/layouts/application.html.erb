@@ -9,13 +9,6 @@
         <div class="hbox hbox-auto-xs hbox-auto-sm">
           <div class="col">
             <%= render 'layouts/header' %>
-            <ul>
-            <% if current_user %>
-            <% current_user.badges.each do |badge| %>
-              <li><%= badge.name %></li>
-            <% end %>
-            <% end %>
-            </ul>
             <%= yield %>
           </div>
         </div>

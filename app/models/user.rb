@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   has_merit
   has_secure_password
 
-  has_many :posts
   has_many :video_reviews
   
   validates :username, uniqueness: true
@@ -14,7 +13,7 @@ class User < ActiveRecord::Base
   }
 
   def full_name
-    # first_name + ' ' + last_name
+    first_name + ' ' + last_name
   end
   
 end

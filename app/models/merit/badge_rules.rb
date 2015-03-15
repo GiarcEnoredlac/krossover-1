@@ -21,9 +21,12 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      # grant_on 'users/registrations#create', badge_id: 1, model_name: 'User'
+     # grant_on 'users/registrations#create', badge_id: 1, model_name: 'User'
       grant_on 'video_reviews#create', badge_id: 1, to: :user do |video_review|
         video_review.user.video_reviews.count >= 1
+      end
+      grant_on 'video_reviews#create', badge_id: 2, to: :user do |video_review|
+        video_review.user.video_reviews.count >= 5
       end
       # grant_on 'posts#update', badge_id: 10 do |post|
       #   post.videos_reviewed?
@@ -34,42 +37,3 @@ module Merit
     end
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
