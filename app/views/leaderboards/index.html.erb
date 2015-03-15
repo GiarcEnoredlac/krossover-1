@@ -7,6 +7,9 @@
 		<% @users.each do |user| %>
 			<tr>
 				<td><%= user.full_name %></td>
+				<% user.badges.each do |badge| %>
+				<td><%= badge.name %></td>
+				<% end %>
 				<td><%= Country.find(user.location).name %></td>
 				<td><%= user.videos_reviewed %></td>
 			</tr>
