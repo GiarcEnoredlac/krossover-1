@@ -13,10 +13,10 @@ gem 'faker'
 gem 'fabrication'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
-gem 'devise'
 gem 'nokogiri'
 gem 'paperclip'
 gem 'merit'
+gem 'bcrypt'
 
 group :development do
   gem 'thin'
