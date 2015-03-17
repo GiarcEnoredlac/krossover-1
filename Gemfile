@@ -17,6 +17,7 @@ gem 'nokogiri'
 gem 'paperclip'
 gem 'merit'
 gem 'bcrypt'
+gem 'devise'
 
 group :development do
   gem 'thin'

@@ -10,9 +10,9 @@ Country.create(name: "USA")
 Country.create(name: "India")
 Country.create(name: "Philippines")
 
-Admin.create(full_name: "Michael McDevitt", 
-						 email: "mmcdevi1@gmail.com",
-						 password: "password")
+# Admin.create(full_name: "Michael McDevitt", 
+# 						 email: "mmcdevi1@gmail.com",
+# 						 password: "password")
 
 User.create(first_name: "Michael", 
 						last_name: "McDevitt",

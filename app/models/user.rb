@@ -1,6 +1,13 @@
 class User < ActiveRecord::Base
   has_merit
-  has_secure_password
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+
+  
 
   has_many :video_reviews
   has_many :statuses
@@ -17,5 +24,8 @@ class User < ActiveRecord::Base
   def full_name
     first_name + ' ' + last_name
   end
-  
+
+  def add_badge_5
+    current_user.add_badge(5)
+  end
 end

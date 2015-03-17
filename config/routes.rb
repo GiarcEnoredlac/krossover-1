@@ -7,13 +7,18 @@ Rails.application.routes.draw do
 
   root to: "static_pages#index"
 
-  get 'register', to: "users#new"
-  get 'login', to: "sessions#new"
-  get 'logout', to: "sessions#destroy"
-  resources :users, only: [:create]
-  resources :sessions, only: [:create]
+  
 
-  get  '/profile/edit', to: 'users#edit', as: :edit
+
+  devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
+
+  devise_scope :user do
+    get  '/register', to: 'users/registrations#new', as: :register
+    get  '/profile/edit', to: 'users/registrations#edit', as: :edit
+
+    get  '/login', to: 'users/sessions#new', as: :login   
+    get  '/logout', to: 'users/sessions#destroy', as: :logout
+  end  
 
   # devise_for :admins, controllers: { registrations: "admins/registrations", sessions: "admins/sessions" }
 

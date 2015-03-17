@@ -105,4 +105,3 @@ Merit::Badge.create!(
 
 
 
-
