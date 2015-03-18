@@ -1,0 +1,13 @@
+!!!
+%html
+  %body
+    = render 'layouts/head'
+    = render 'layouts/flash'
+    = render 'layouts/aside'
+    #content.app-content{:role => "main"}
+      .app-content-body
+        .hbox.hbox-auto-xs.hbox-auto-sm
+          .col
+            = render 'layouts/header'
+            = yield
+    = render 'layouts/footer'

@@ -1,0 +1,14 @@
+%p
+  Name: #{@user.full_name}
+%p
+  Username: #{@user.username}
+%p
+  Email: #{@user.email}
+%p
+  Description: #{@user.description}
+%p
+  Location: #{Country.where(id: @user.location).first.name}
+%p
+  Videos Reviewed: #{@user.reviews.count}
+%p
+  Badges: #{@user.badges}

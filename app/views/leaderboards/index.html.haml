@@ -1,0 +1,11 @@
+%h1 Leaderboards
+%table.table
+  %thead
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.full_name
+        - user.badges.each do |badge|
+          %td= badge.name
+        %td= Country.find(user.location).name
+        %td= user.videos_reviewed
