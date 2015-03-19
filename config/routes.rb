@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
-  
-  resources :video_reviews
+
   resources :reviews, only: [:new, :create]
 
-  get 'static_pages/index'
-
   root to: "static_pages#index"
-
-  
-
 
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
 
   devise_scope :user do
+    get  '/dashboard', to: 'dashboards#index'
     get  '/register', to: 'users/registrations#new', as: :register
     get  '/profile/edit', to: 'users/registrations#edit', as: :edit
 

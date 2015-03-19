@@ -1,7 +1,7 @@
 %body
   .app.app-header-fixesd
     %header#header.app-header.navbar{:role => "menu"}
-      .collapse.pos-rlt.navbar-collapse.bg-white.b-b
+      .collapse.pos-rlt.navbar-collapse.bg-white
         .nav.navbar-nav.hidden-xs
           %a.navbar-brand.text-lt{:href => "#/"}
         %ul.nav.navbar-nav.navbar-right
@@ -9,6 +9,7 @@
             %li.dropdown
               %a.dropdown-toggle.clear{"data-toggle" => "dropdown", :href => "#"}
                 = current_user.full_name
+                %i.i.i-arrow-down5
               / dropdown
               %ul.dropdown-menu.animated.fadeInRight.w
                 %li.wrapper.b-b.m-b-sm.bg-light.m-t-n-xs

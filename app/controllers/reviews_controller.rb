@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+	before_action :authenticate_user!
 
 	def index
 		@reviews = Review.all
@@ -11,7 +12,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def new
-		@review = current_user.reviews.new
+		@review = Review.new
 	end
 
 	def create

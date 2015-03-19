@@ -21,29 +21,47 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      # If it creates user, grant badge
-      # Should be "current_user" after registration for badge to be granted.
-      # Find badge by badge_id, badge_id takes presidence over badge
-      # grant_on 'users#create', badge_id: 7, badge: 'just-registered', to: :itself
 
-      # If it has 10 comments, grant commenter-10 badge
+      grant_on 'reviews#create', badge_id: 1, level: 1, to: :user do |review|
+        review.user.reviews.count == 1
+      end
+      
       grant_on 'reviews#create', badge_id: 2, level: 2, to: :user do |review|
         review.user.reviews.count == 5
       end
 
-      # If it has 5 votes, grant relevant-commenter badge
-      # grant_on 'comments#vote', badge: 'relevant-commenter',
-      #   to: :user do |comment|
-      #
-      #   comment.votes.count == 5
-      # end
+      grant_on 'reviews#create', badge_id: 3, level: 3, to: :user do |review|
+        review.user.reviews.count == 10
+      end
+      
+      grant_on 'reviews#create', badge_id: 4, level: 4, to: :user do |review|
+        review.user.reviews.count == 15
+      end
 
-      # Changes his name by one wider than 4 chars (arbitrary ruby code case)
-      # grant_on 'registrations#update', badge: 'autobiographer',
-      #   temporary: true, model_name: 'User' do |user|
-      #
-      #   user.name.length > 4
-      # end
+      grant_on 'reviews#create', badge_id: 5, level: 5, to: :user do |review|
+        review.user.reviews.count == 20
+      end
+      
+      grant_on 'reviews#create', badge_id: 6, level: 6, to: :user do |review|
+        review.user.reviews.count == 25
+      end
+
+      grant_on 'reviews#create', badge_id: 7, level: 7, to: :user do |review|
+        review.user.reviews.count == 30
+      end
+      
+      grant_on 'reviews#create', badge_id: 8, level: 8, to: :user do |review|
+        review.user.reviews.count == 35
+      end
+
+      grant_on 'reviews#create', badge_id: 9, level: 9, to: :user do |review|
+        review.user.reviews.count == 40
+      end
+      
+      grant_on 'reviews#create', badge_id: 10, level: 10, to: :user do |review|
+        review.user.reviews.count == 100
+      end
+
     end
   end
 end

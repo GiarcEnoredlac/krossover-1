@@ -1,30 +1,23 @@
-/ aside
-%aside#aside.app-aside.hidden-xs.bg-offwhite{:style => "position:fixed; height:100%;"}
+%aside#aside.app-aside.hidden-xs.bg-black.bold{:style => "position:fixed; height:100%;"}
   .aside-wrap
     .navi-wrap
-      / nav
-      %nav.navi.clearfix{:style => "padding:20px", "ui-nav" => ""}
+      %nav.navi.clearfix
         %ul.nav
-          %li.hidden-folded.m-b-sm.text-xs.nav-sm-title
+          %li.hidden-folded.m-b-sm.text-xs.text-muted.uppercase.padder.m-t.m-b-sm
             %span Menu
           %li
-            = link_to root_path, class: "auto", title: "Dashboard" do
+            = link_to dashboard_path, class: "auto", title: "Dashboard" do
               %span Dashboard
           %li
-            = link_to new_video_review_path do
+            = link_to new_review_path do
               %span Videos
           %li
-            = link_to "market_path", class: "auto", title: "Market" do
+            = link_to leaderboards_path, class: "auto", title: "Market" do
               %b.badge.bg-info.pull-right
-              %span Market
-          %li
-            = link_to "deals_path", class: "auto", title: "My Pipeline" do
-              %span My Pipeline
+              %span Leaderboards
           %li
             %a.auto{:href => ""}
               %span Calendar
           %li
             = link_to "contacts_path", class: "auto", title: "Contacts" do
               %span Contacts
-      / nav
-/ / aside

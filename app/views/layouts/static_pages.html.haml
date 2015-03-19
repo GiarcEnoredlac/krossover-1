@@ -1,0 +1,13 @@
+!!!
+%html
+	= render 'layouts/head'
+	%body
+		= render 'layouts/flash'
+		#content
+			.app-content-body
+				.hbox.hbox-auto-xs.hbox-auto-sm
+					.col
+						= render 'layouts/header'
+						.wrapper
+							= yield
+		= render 'layouts/footer'
