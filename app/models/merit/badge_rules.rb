@@ -27,7 +27,7 @@ module Merit
       end
       
       grant_on 'reviews#create', badge_id: 2, level: 2, to: :user do |review|
-        review.user.reviews.count == 5
+        review.user.reviews.count > 5
       end
 
       grant_on 'reviews#create', badge_id: 3, level: 3, to: :user do |review|

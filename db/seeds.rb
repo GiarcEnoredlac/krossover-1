@@ -33,4 +33,14 @@ User.create(first_name: "Michael",
 							location: rand(1..3),
 							videos_reviewed: ( rand(1..500) ) 
 							)
-end
+	end
+
+1000.times do 
+		Review.create(title: "Basketball Game",
+								  user_id: rand(1..90),
+								  game_length: rand(1..5),
+								  review_length: rand(5..10),
+								  number_of_plays: rand(50..70),
+								  correct_plays: rand(30..50)
+								  )
+	end

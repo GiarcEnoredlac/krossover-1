@@ -1,8 +1,8 @@
 !!!
 %html
-  %body
-    = render 'layouts/head'
-    = render 'layouts/flash'
-    .container
-      = yield
-    = render 'layouts/footer'
+	= render 'layouts/head'
+	%body.devise
+		= render 'layouts/flash'
+		.container
+			= yield
+		= render 'layouts/footer'

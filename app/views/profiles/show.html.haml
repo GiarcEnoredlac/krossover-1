@@ -1,14 +1,69 @@
 %p
-  Name: #{@user.full_name}
+	Name: #{@user.full_name}
 %p
-  Username: #{@user.username}
+	Username: #{@user.username}
 %p
-  Email: #{@user.email}
+	Email: #{@user.email}
 %p
-  Description: #{@user.description}
+	Description: #{@user.description}
 %p
-  Location: #{Country.where(id: @user.location).first.name}
+	Location: #{Country.where(id: @user.location).first.name}
 %p
-  Videos Reviewed: #{@user.reviews.count}
+	Videos Reviewed: #{@user.reviews.count}
 %p
-  Badges: #{@user.badges}
+	Points Earned: #{@user.total_points.round}
+%p
+	Badges: #{@user.badges}
+%p 
+	Games Reviewed Table
+%table.table
+	%thead
+		%tr
+			%td Game Title
+			%td Game Length (hrs)
+			%td Review Length (hrs)
+			%td Length %
+			%td Number of Plays
+			%td Correct Plays
+			%td Correct Plays %
+			%td Points Earned
+	%tbody
+		- @user.reviews.each do |review|
+			%tr
+				%td= review.title
+				%td= review.game_length
+				%td= review.review_length
+				%td= game_length_percentage(review)
+				%td= review.number_of_plays
+				%td= review.correct_plays
+				%td= correct_play_percentage(review)
+				%td
+		%tr
+			%td
+			%td= @user.sum_game_length
+			%td= @user.sum_review_length
+			%td= number_to_percentage(@user.total_game_length_percentage, precision: 0)
+			%td= @user.sum_number_of_plays
+			%td= @user.sum_correct_plays
+			%td= number_to_percentage(@user.total_plays_percentage, precision: 0)
+			%td= @user.total_points
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
