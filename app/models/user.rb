@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-<<<<<<< HEAD
+
   has_many :conversations, :foreign_key => :sender_id
-=======
+
   has_many :reviews
   
   validates :username, presence: true, uniqueness: true
@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
     total_plays_percentage * 0.3 + total_game_length_percentage * 0.3 + max
   end
 
->>>>>>> origin/master
+
 end
 
 
