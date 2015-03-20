@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150320215633) do
 
-
   create_table "admins", force: true do |t|
     t.string   "full_name"
     t.string   "email",                  default: "", null: false
