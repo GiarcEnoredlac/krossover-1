@@ -11,11 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150320215633) do
-=======
-ActiveRecord::Schema.define(version: 20150319195951) do
->>>>>>> origin/master
+
 
   create_table "admins", force: true do |t|
     t.string   "full_name"
@@ -47,7 +44,6 @@ ActiveRecord::Schema.define(version: 20150319195951) do
   add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id"
   add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id"
 
-<<<<<<< HEAD
   create_table "conversations", force: true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
@@ -58,8 +54,6 @@ ActiveRecord::Schema.define(version: 20150319195951) do
   add_index "conversations", ["recipient_id"], name: "index_conversations_on_recipient_id"
   add_index "conversations", ["sender_id"], name: "index_conversations_on_sender_id"
 
-=======
->>>>>>> origin/master
   create_table "countries", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -99,7 +93,6 @@ ActiveRecord::Schema.define(version: 20150319195951) do
     t.string  "category", default: "default"
   end
 
-<<<<<<< HEAD
   create_table "messages", force: true do |t|
     t.text     "body"
     t.integer  "conversation_id"
@@ -111,8 +104,6 @@ ActiveRecord::Schema.define(version: 20150319195951) do
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
-=======
->>>>>>> origin/master
   create_table "reviews", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
