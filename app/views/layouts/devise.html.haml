@@ -3,6 +3,9 @@
 	= render 'layouts/head'
 	%body.devise
 		= render 'layouts/flash'
-		.container
-			= yield
+		#wrapper
+			#page
+				#content_container
+					#content
+						= yield
 		= render 'layouts/footer'
