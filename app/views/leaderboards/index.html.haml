@@ -1,0 +1,17 @@
+%h1 Leaderboards
+%table.table
+	%thead
+	%tbody
+		%tr
+			%td Name
+			%td Location
+			%td Videos Reviewed
+			%td Points Earned
+		- @users.each do |user|
+			%tr
+				%td= link_to user.full_name, profile_path(user.username)
+				- user.badges.each do |badge|
+					%td= badge.name
+				%td= Country.find(user.location).name
+				%td= user.review_count
+				%td= user.total_points.round
