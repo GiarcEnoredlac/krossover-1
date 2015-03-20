@@ -9,14 +9,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
-  
-
-  has_many :video_reviews
-  has_many :statuses
   has_many :reviews
   
-  validates :username, uniqueness: true
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates_presence_of :first_name, :last_name
   
   has_attached_file :profile_image, styles: {
 		medium: "300x200#",
@@ -25,7 +22,7 @@ class User < ActiveRecord::Base
   }
 
   def full_name
-    first_name + ' ' + last_name
+    self.first_name + ' ' + self.last_name
   end
 
   def review_count
