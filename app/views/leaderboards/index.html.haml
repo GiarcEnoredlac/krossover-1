@@ -15,3 +15,4 @@
 				%td= Country.find(user.location).name
 				%td= user.review_count
 				%td= user.total_points.round
+				%td= link_to "Send Message", "#", data: { sid: current_user.id, rip: user.id }
