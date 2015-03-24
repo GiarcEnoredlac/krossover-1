@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-  before_action :correct_users
+  before_action :correct_users, except: [:create]
 
 	def create
     if Conversation.between(params[:sender_id],params[:recipient_id]).present?
@@ -7,8 +7,7 @@ class ConversationsController < ApplicationController
     else
       @conversation = Conversation.create!(conversation_params)
     end
- 
-    render json: { conversation_id: @conversation.id }
+    redirect_to @conversation
   end
  
   def show

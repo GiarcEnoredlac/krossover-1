@@ -1,3 +1,5 @@
+= link_to "Send Message", 
+	{action: :create, controller: :conversations, sender_id: current_user.id, recipient_id: @user.id}, method: :post
 %p
 	Name: #{@user.full_name}
 %p
