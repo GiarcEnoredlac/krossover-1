@@ -11,5 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require polling
+//= require faye
+//= require messages
+//= require turbolinks
 //= require_tree .

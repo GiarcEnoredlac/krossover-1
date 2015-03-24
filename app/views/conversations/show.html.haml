@@ -1,0 +1,9 @@
+= @conversation.sender_id
+= @reciever.id
+
+- if current_user
+	%div.panel-default#comments
+		%div.panel-body
+			%div.media-list
+				= render @messages
+		= render 'form'

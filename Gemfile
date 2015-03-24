@@ -18,6 +18,7 @@ gem 'paperclip'
 gem 'merit'
 gem 'bcrypt'
 gem 'devise'
+gem 'faye-rails'
 
 group :development do
   gem 'thin'
