@@ -1,0 +1,139 @@
+<div class='wrapper-lg'>
+        <div class="row padder-v">
+          <div class='col-md-9'>
+            <div class='col-md-4'>
+              <div class="panel panel-default">
+                <div class="panel-heading font-bold">
+                  Current Badge
+                </div> <!-- panel-heading end -->
+                <div class="panel-body text-center">
+                  <img src="img/MVP_gold.png" class='thumb-lg img-circle'>
+                </div> <!-- panel-body -->
+              </div> <!-- panel-default -->
+            </div> <!-- first column -->
+            <div class='col-md-4'>
+              <div class="panel panel-default">
+                  <div class="panel-heading font-bold">
+                    Next badge
+                  </div> <!-- panel-heading end -->
+                  <div class="panel-body text-center">
+                    <div class="inline">
+                      <div ui-jq="easyPieChart" ui-options="{
+                            percent: 75,
+                            lineWidth: 10,
+                            trackColor: '#e8eff0',
+                            barColor: '#27c24c',
+                            scaleColor: '#e8eff0',
+                            size: 188,
+                            lineCap: 'butt',
+                            animate: 1000
+                          }" class="easyPieChart" style="width: 188px; height: 188px; line-height: 188px;">
+                      <div>
+                        <span class="h2 m-l-sm step">75 </span>%
+                        <div class="text text-sm">today</div>
+                      </div>
+                        <canvas width="376" height="376" style="width: 188px; height: 188px;"></canvas>
+                      </div>
+                      </div> <!-- ui-jq -->
+                    </div> <!-- inline -->
+                  </div> <!-- panel-default -->
+            </div> <!-- second column -->
+            <div class='col-md-4'>
+              <div class="panel panel-default">
+                <div class="panel-heading font-bold">
+                  Earnings to Date
+                </div> <!-- panel-heading end -->
+                <div class="panel-body text-center">
+                  <div class="text-primary-dk font-thin h1"><span>$12,670</span></div>
+                </div> <!-- panel-body -->
+              </div> <!-- panel-default -->
+            </div> <!-- third column -->
+            <div class='col-md-12'>
+            <div class="panel wrapper">
+                
+                <h4 class="font-thin m-t-none m-b text-muted">Game History</h4>
+                <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+                  [
+                    { data: [ [0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7] ], label:'Games', points: { show: true, radius: 1}, splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.8 } }
+                    
+                  ], 
+                  {
+                    colors: ['#23b7e5'],
+                    series: { shadowSize: 3 },
+                    xaxis:{ font: { color: '#a1a7ac' } },
+                    yaxis:{ font: { color: '#a1a7ac' }, max:20 },
+                    grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                    tooltip: true,
+                    tooltipOpts: { content: 'Visits of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+                  }
+                " style="height:246px" >
+                </div>
+              </div>
+          </div> 
+          </div>   <!-- col-9  -->    
+          <div class='col-md-3'>
+            <div class="panel panel-default">
+              <div class="panel-heading font-bold ">
+                Leaderboard             
+              </div>
+              <ul class="list-group list-group-lg m-b-none">
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a1.jpg" class="r r-2x">
+                  </a>
+                  <a href="">Damon Parker</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a2.jpg" class="r r-2x">
+                  </a>
+                  <a href="">Joe Waston</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a3.jpg" class="r r-2x">
+                  </a>
+                  <a href="">Jannie Dvis</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a4.jpg" class="r r-2x">
+                  </a>
+                  <a href="">Emma Welson</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a4.jpg" class="r r-2x">
+                  </a>
+                  <a href="">Ninja Duck</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a4.jpg" class="r r-2x">
+                  </a>
+                  <a href="">Craig Calde</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a4.jpg" class="r r-2x">
+                  </a>
+                  <a href="">Petey Casanova</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="" class="thumb-sm m-r">
+                    <img src="img/a4.jpg" class="r r-2x">
+                  </a>
+                  <a href="">B Money</a>
+                </li>
+              </ul>
+              <!-- <div class="panel-footer">
+                
+              </div> -->
+            </div>  <!-- fourth column -->
+        </div> <!-- row end -->
+          
+          
+       
+
+    </div>
+  </div>

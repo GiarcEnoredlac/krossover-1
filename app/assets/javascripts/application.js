@@ -16,5 +16,21 @@
 //= require polling
 //= require faye
 //= require messages
+//= require app
+//= require app.plugin
+//= require ui-load
+//= require ui-jp.config
+//= require ui-jp
+//= require ui-nav
+//= require ui-toggle
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+	$('.circle').circleProgress({
+    value: 0.8,
+    fill: { gradient: ['#ff1e41', '#ff5f43'] }
+}).on('circle-animation-progress', function(event, progress) {
+    $(this).find('strong').html(parseInt(100 * progress) + '<i>%</i>');
+});
+});
+    

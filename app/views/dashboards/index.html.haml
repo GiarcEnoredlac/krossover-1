@@ -1,24 +1,83 @@
 .row
-	.col-sm-9
+	.col-md-9
 		.row
-			.col-sm-4
-				.panel
-					.panel-body
-						%h3 Current Badge
-						/ = current_user.badges.last.name
-			.col-sm-4
-				.panel
-					.panel-body
-						Progress Next
-			.col-sm-4
-				.panel
-					.panel-body
-						Earnings YTD
-			.col-sm-12
-				.panel
-					.panel-body	
-						Game Stats
-	.col-sm-3
-		.panel
-			.panel-body	
+			.col-md-4
+				.panel.panel-default
+					.font-bold
+						Current Badge
+					.panel-body.text-center
+						%img.thumb-lg.img-circle{:src => "img/MVP_gold.png"}/
+			.col-md-4
+				.panel.panel-default
+					.font-bold
+						Next badge
+					.panel-body.text-center
+						.inline
+							.circle
+								%strong 100
+			.col-md-4
+				.panel.panel-default
+					.font-bold
+						Earnings to Date
+					.panel-body.text-center
+						.text-primary-dk.font-thin.h1
+							%span $12,670
+			.col-md-12
+				.panel.wrapper
+					%h4.font-thin.m-t-none.m-b.text-muted Game History
+					%div{:style => "height:246px", "ui-jq" => "plot", "ui-options" => "\n                  [\n                    { data: [ [0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7] ], label:'Games', points: { show: true, radius: 1}, splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.8 } }\n                    \n                  ], \n                  {\n                    colors: ['#23b7e5'],\n                    series: { shadowSize: 3 },\n                    xaxis:{ font: { color: '#a1a7ac' } },\n                    yaxis:{ font: { color: '#a1a7ac' }, max:20 },\n                    grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },\n                    tooltip: true,\n                    tooltipOpts: { content: 'Visits of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }\n                  }\n                ", "ui-refresh" => "showSpline"}
+	.col-md-3
+		.panel.panel-default
+			.panel-heading.font-bold
 				Leaderboard
+			%ul.list-group.list-group-lg.m-b-none
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a1.jpg"}/
+					%a{:href => ""} Damon Parker
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a2.jpg"}/
+					%a{:href => ""} Joe Waston
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a3.jpg"}/
+					%a{:href => ""} Jannie Dvis
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a4.jpg"}/
+					%a{:href => ""} Emma Welson
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a4.jpg"}/
+					%a{:href => ""} Ninja Duck
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a4.jpg"}/
+					%a{:href => ""} Craig Calde
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a4.jpg"}/
+					%a{:href => ""} Petey Casanova
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						%img.r.r-2x{:src => "img/a4.jpg"}/
+					%a{:href => ""} B Money
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
