@@ -1,88 +1,89 @@
-.row.padder-v
-  .col-md-9
-    .col-md-4
+.wrapper-lg
+  .row.padder-v
+    .col-md-9
+      .col-md-4
+        .panel.panel-default
+          .panel-heading.font-bold
+            Current Badge
+          / panel-heading end
+          .panel-body.text-center
+            %img.thumb-lg.img-circle{:src => "img/MVP_gold.png"}/
+          / panel-body
+        / panel-default
+      / first column
+      .col-md-4
+        .panel.panel-default
+          .panel-heading.font-bold
+            Next badge
+          / panel-heading end
+          .panel-body.text-center
+            .inline
+              .easyPieChart{:style => "width: 188px; height: 188px; line-height: 188px;", "ui-jq" => "easyPieChart", "ui-options" => "{\n                            percent: 75,\n                            lineWidth: 10,\n                            trackColor: '#e8eff0',\n                            barColor: '#27c24c',\n                            scaleColor: '#e8eff0',\n                            size: 188,\n                            lineCap: 'butt',\n                            animate: 1000\n                          }"}
+                %div
+                  %span.h2.m-l-sm.step> 75
+                  \%
+                  .text.text-sm today
+                %canvas{:height => "376", :style => "width: 188px; height: 188px;", :width => "376"}
+            / ui-jq
+          / inline
+        / panel-default
+      / second column
+      .col-md-4
+        .panel.panel-default
+          .panel-heading.font-bold
+            Earnings to Date
+          / panel-heading end
+          .panel-body.text-center
+            .text-primary-dk.font-thin.h1
+              %span $12,670
+          / panel-body
+        / panel-default
+      / third column
+      .col-md-12
+        .panel.wrapper
+          %h4.font-thin.m-t-none.m-b.text-muted Game History
+          %div{:style => "height:246px", "ui-jq" => "plot", "ui-options" => "\n                  [\n                    { data: [ [0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7] ], label:'Games', points: { show: true, radius: 1}, splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.8 } }\n                    \n                  ], \n                  {\n                    colors: ['#23b7e5'],\n                    series: { shadowSize: 3 },\n                    xaxis:{ font: { color: '#a1a7ac' } },\n                    yaxis:{ font: { color: '#a1a7ac' }, max:20 },\n                    grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },\n                    tooltip: true,\n                    tooltipOpts: { content: 'Visits of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }\n                  }\n                ", "ui-refresh" => "showSpline"}
+    / col-9
+    .col-md-3
       .panel.panel-default
         .panel-heading.font-bold
-          Current Badge
-        / panel-heading end
-        .panel-body.text-center
-          %img.thumb-lg.img-circle{:src => "img/MVP_gold.png"}/
-        / panel-body
-      / panel-default
-    / first column
-    .col-md-4
-      .panel.panel-default
-        .panel-heading.font-bold
-          Next badge
-        / panel-heading end
-        .panel-body.text-center
-          .inline
-            .easyPieChart{:style => "width: 188px; height: 188px; line-height: 188px;", "ui-jq" => "easyPieChart", "ui-options" => "{\n                            percent: 75,\n                            lineWidth: 10,\n                            trackColor: '#e8eff0',\n                            barColor: '#27c24c',\n                            scaleColor: '#e8eff0',\n                            size: 188,\n                            lineCap: 'butt',\n                            animate: 1000\n                          }"}
-              %div
-                %span.h2.m-l-sm.step> 75
-                \%
-                .text.text-sm today
-              %canvas{:height => "376", :style => "width: 188px; height: 188px;", :width => "376"}
-          / ui-jq
-        / inline
-      / panel-default
-    / second column
-    .col-md-4
-      .panel.panel-default
-        .panel-heading.font-bold
-          Earnings to Date
-        / panel-heading end
-        .panel-body.text-center
-          .text-primary-dk.font-thin.h1
-            %span $12,670
-        / panel-body
-      / panel-default
-    / third column
-    .col-md-12
-      .panel.wrapper
-        %h4.font-thin.m-t-none.m-b.text-muted Game History
-        %div{:style => "height:246px", "ui-jq" => "plot", "ui-options" => "\n                  [\n                    { data: [ [0,7],[1,6.5],[2,12.5],[3,7],[4,9],[5,6],[6,11],[7,6.5],[8,8],[9,7] ], label:'Games', points: { show: true, radius: 1}, splines: { show: true, tension: 0.4, lineWidth: 1, fill: 0.8 } }\n                    \n                  ], \n                  {\n                    colors: ['#23b7e5'],\n                    series: { shadowSize: 3 },\n                    xaxis:{ font: { color: '#a1a7ac' } },\n                    yaxis:{ font: { color: '#a1a7ac' }, max:20 },\n                    grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },\n                    tooltip: true,\n                    tooltipOpts: { content: 'Visits of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 10, y: -25 } }\n                  }\n                ", "ui-refresh" => "showSpline"}
-  / col-9
-  .col-md-3
-    .panel.panel-default
-      .panel-heading.font-bold
-        Leaderboard
-      %ul.list-group.list-group-lg.m-b-none
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a1.jpg"}/
-          %a{:href => ""} Damon Parker
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a2.jpg"}/
-          %a{:href => ""} Joe Waston
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a3.jpg"}/
-          %a{:href => ""} Jannie Dvis
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a4.jpg"}/
-          %a{:href => ""} Emma Welson
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a4.jpg"}/
-          %a{:href => ""} Ninja Duck
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a4.jpg"}/
-          %a{:href => ""} Craig Calde
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a4.jpg"}/
-          %a{:href => ""} Petey Casanova
-        %li.list-group-item
-          %a.thumb-sm.m-r{:href => ""}
-            %img.r.r-2x{:src => "img/a4.jpg"}/
-          %a{:href => ""} B Money
-      /
-        <div class="panel-footer">
-        
-        </div>
-    / fourth column
-  / row end
+          Leaderboard
+        %ul.list-group.list-group-lg.m-b-none
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a1.jpg"}/
+            %a{:href => ""} Damon Parker
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a2.jpg"}/
+            %a{:href => ""} Joe Waston
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a3.jpg"}/
+            %a{:href => ""} Jannie Dvis
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a4.jpg"}/
+            %a{:href => ""} Emma Welson
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a4.jpg"}/
+            %a{:href => ""} Ninja Duck
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a4.jpg"}/
+            %a{:href => ""} Craig Calde
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a4.jpg"}/
+            %a{:href => ""} Petey Casanova
+          %li.list-group-item
+            %a.thumb-sm.m-r{:href => ""}
+              %img.r.r-2x{:src => "img/a4.jpg"}/
+            %a{:href => ""} B Money
+        /
+          <div class="panel-footer">
+          
+          </div>
+      / fourth column
+    / row end

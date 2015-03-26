@@ -29,8 +29,61 @@ $(document).ready(function() {
 	$('.circle').circleProgress({
     value: 0.8,
     fill: { gradient: ['#ff1e41', '#ff5f43'] }
-}).on('circle-animation-progress', function(event, progress) {
-    $(this).find('strong').html(parseInt(100 * progress) + '<i>%</i>');
+	}).on('circle-animation-progress', function(event, progress) {
+	    $(this).find('strong').html(parseInt(100 * progress) + '<i>%</i>');
+	});
+
+	// var height = $('#next-badge').height();
+	// $("#earnings-to-date").css('height', height);
+	// $("#current-badge").css('height', height);
+	// $('.scrollable').scrollTop($(document).height()); 
+
+	 $('html, body').scrollTop( $(document).height() );
+
+	var padderHeightFunc = function() {
+		var browserHeight   = $(document).height();
+		var mediaListHeight = $(".media-list").height();
+		var padderHeight    = browserHeight - mediaListHeight - 190;
+
+	 	$("#display_padder").css('height', padderHeight);
+	}
+
+	padderHeightFunc();
+
+	$( window ).resize(function() {
+		padderHeightFunc();
+ 	});
+
+ 	$('.form-control').keyup(function(e) {
+    if(e.which == 13) {
+       padderHeightFunc();
+       $('.scrollable').scrollTop($('.scrollable').height());  
+    }
+	});
 });
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     

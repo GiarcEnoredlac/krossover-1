@@ -1,34 +1,33 @@
-%body
-  .app.app-header-fixesd
-    %header#header.app-header.navbar{:role => "menu"}
-      .collapse.pos-rlt.navbar-collapse.bg-white
-        .nav.navbar-nav.hidden-xs
-          %a.navbar-brand.text-lt{:href => "#/"}
-        %ul.nav.navbar-nav.navbar-right
-          - if current_user
-            %li.dropdown
-              %a.dropdown-toggle.clear{"data-toggle" => "dropdown", :href => "#"}
-                = current_user.full_name
-                %i.i.i-arrow-down5
-              / dropdown
-              %ul.dropdown-menu.animated.fadeInRight.w
-                %li.wrapper.b-b.m-b-sm.bg-light.m-t-n-xs
-                  %div
-                    %p 300mb of 500mb used
-                  .progress.progress-xs.m-b-none.dker
-                    .progress-bar.progress-bar-info{"data-original-title" => "50%", "data-toggle" => "tooltip", :style => "width: 50%"}
-                %li
-                  = link_to "Settings", edit_path
-                %li
-                  = link_to "Profile", profile_path(current_user.username)
-                %li
-                  %a{"ui-sref" => "app.docs"}
-                    %span.label.bg-info.pull-right new
-                    Help
-                %li.divider
-                %li
-                  = link_to "Logout", logout_path
-              / / dropdown
-          - else
-            %li= link_to "Login", login_path
-            %li= link_to "Register", register_path
+%header#header.app-header.navbar{:role => "menu"}
+  .collapse.pos-rlt.navbar-collapse.bg-white
+    .nav.navbar-nav.hidden-xs
+      = link_to root_path, class: "navbar-brand text-lt" do
+        = image_tag('krossover_logo.png', class: "img-responsive")
+    %ul.nav.navbar-nav.navbar-right
+      - if current_user
+        %li.dropdown
+          %a.dropdown-toggle.clear{"data-toggle" => "dropdown", :href => "#"}
+            = current_user.full_name
+            %i.i.i-arrow-down5
+          / dropdown
+          %ul.dropdown-menu.animated.fadeInRight.w
+            %li.wrapper.b-b.m-b-sm.bg-light.m-t-n-xs
+              %div
+                %p 300mb of 500mb used
+              .progress.progress-xs.m-b-none.dker
+                .progress-bar.progress-bar-info{"data-original-title" => "50%", "data-toggle" => "tooltip", :style => "width: 50%"}
+            %li
+              = link_to "Settings", edit_path
+            %li
+              = link_to "Profile", profile_path(current_user.username)
+            %li
+              %a{"ui-sref" => "app.docs"}
+                %span.label.bg-info.pull-right new
+                Help
+            %li.divider
+            %li
+              = link_to "Logout", logout_path
+          / / dropdown
+      - else
+        %li= link_to "Login", login_path
+        %li= link_to "Register", register_path

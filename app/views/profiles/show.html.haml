@@ -49,8 +49,31 @@
 			%td= @user.sum_correct_plays
 			%td= number_to_percentage(@user.total_plays_percentage, precision: 0)
 			%td= @user.total_points
-
-
+%div{:style => "background: #0A3E5B"}
+	.wrapper-lg
+		.row.m-t
+			.col-xs-3
+				%a.thumb-lg.pull-left.m-r{:href => "#"}
+				= image_tag('a0.jpg', class: "img-circle img-responsive")
+			.col-xs-9.profile-text
+				%h2= "#{@user.full_name}"
+				%h4= Country.where(id: @user.location).first.name
+				%h4 Current Badge: Pickup
+				%p= @user.description
+.list-group-item
+	%h3.profile-header Progress to Next Badge
+	.progress
+		.progress-bar.progress-bar-striped.active{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "45", :role => "progressbar", :style => "width: 45%"}
+			%span.sr-only 45% Complete
+.badges
+	.list-group-item
+		%h3.list-group-item-heading.profile-header Badges Earned
+		.row
+			- 10.times do 
+				.col-xs-3
+					%h3.list-group-item-heading Most Valuable Player
+					= image_tag('mvp.png', class: "img-responsive")
+			
 
 
 

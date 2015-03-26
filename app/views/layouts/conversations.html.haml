@@ -1,15 +1,15 @@
 !!!
 %html
   = render 'layouts/head'
-  %body
+  %body.conversations
     .app.app-header-fixed
       = render 'layouts/flash'
       = render 'layouts/header'
       = render 'layouts/aside'
-      #content.app-content{:role => "main"}
-        .app-content-body
+      #content.app-content.h-full{:role => "main"}
+        .app-content-body.h-full
           .hbox.hbox-auto-xs.hbox-auto-sm
             .col
-              .wrapper-lg
+              .vbox
                 = yield
       = render 'layouts/footer'

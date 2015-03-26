@@ -17,4 +17,4 @@ jQuery ->
     console?.log "Can't unsubscribe."
 
   client.subscribe '/messages', (payload) ->
-    $('#comments').find('.media-list').prepend(payload.message) if payload.message
+    $('#comments').find('.media-list').append(payload.message) if payload.message

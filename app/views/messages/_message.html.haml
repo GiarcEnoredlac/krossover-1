@@ -1,12 +1,9 @@
-.m-b{"data-id" => "#{message.id}"}
+.m-b-lg{"data-id" => "#{message.id}"}
   %a.pull-left.thumb-sm.avatar{:href => ""}
-    / = image_tag(message.user.profile_image)
+    = image_tag('a1.jpg')
   .m-l-xxl
     .pos-rlt
       %p{:style => "font-weight:bold; margin:0;"}
         = link_to message.user.username, "message.user.profile_url", target: '_blank'
       %p.m-b-none
         = message.body
-    %small.text-muted
-      %i.fa.fa-ok.text-success
-      

@@ -1,9 +1,15 @@
-= @conversation.sender_id
-= @reciever.id
-
-- if current_user
-	%div.panel-default#comments
-		%div.panel-body
-			%div.media-list
-				= render @messages
-		= render 'form'
+.row-row
+	.cell.scrollable.hover
+		.cell-inner
+			- if current_user
+				%div.panel-default#comments
+					%div.panel-body.conversation-body
+						#display_padder
+						%div.media-list
+							%div{ style: "margin-bottom: 30px; "}
+							Conversation between you and 
+							= @reciever.username
+							= render @messages
+						#message_bottom
+%div
+	= render 'form'

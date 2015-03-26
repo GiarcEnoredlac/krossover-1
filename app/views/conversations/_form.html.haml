@@ -3,6 +3,6 @@
 		= form_for([@conversation, @conversation.messages.build], remote: true) do |f| 
 			%div.input-group
 				= f.text_field :body, class: 'form-control', required: true, maxlength: 2000
-				%span.input-group-btn
+				%span.input-group-btn{ style: "display:none;"}
 					= f.submit 'Send', class: 'btn btn-default'
 	
