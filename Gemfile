@@ -19,6 +19,7 @@ gem 'merit'
 gem 'bcrypt'
 gem 'devise'
 gem 'faye-rails'
+gem 'bower-rails'
 
 group :development do
   gem 'thin'

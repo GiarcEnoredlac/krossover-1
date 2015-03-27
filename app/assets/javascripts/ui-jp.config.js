@@ -1,14 +1,14 @@
 // lazyload config
 
 var jp_config = {
-  easyPieChart:   [   '../bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'],
+  easyPieChart:   [   'assets/jquery.easypiechart.fill.js'],
   sparkline:      [   '../bower_components/jquery.sparkline/dist/jquery.sparkline.retina.js'],
-  plot:           [   '../bower_components/flot/jquery.flot.js',
-                      '../bower_components/flot/jquery.flot.pie.js', 
-                      '../bower_components/flot/jquery.flot.resize.js',
-                      '../bower_components/flot.tooltip/js/jquery.flot.tooltip.js',
-                      '../bower_components/flot.orderbars/js/jquery.flot.orderBars.js',
-                      '../bower_components/flot-spline/js/jquery.flot.spline.js'],
+  plot:           [   'assets/jquery.flot.js',
+                      'assets/jquery.flot.pie.js', 
+                      'assets/jquery.flot.resize.js',
+                      'assets/jquery.flot.tooltip.js',
+                      'assets/jquery.flot.orderBars.js',
+                      'assets/jquery.flot.spline.js'],
   moment:         [   '../bower_components/moment/moment.js'],
   screenfull:     [   '../bower_components/screenfull/dist/screenfull.min.js'],
   slimScroll:     [   '../bower_components/slimscroll/jquery.slimscroll.min.js'],
