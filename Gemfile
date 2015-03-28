@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'rails', '4.1.5'
 gem 'haml-rails'
