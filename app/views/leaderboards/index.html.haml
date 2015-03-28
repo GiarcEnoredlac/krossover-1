@@ -1,17 +1,31 @@
-%h1 Leaderboards
-%table.table
+.row
+	.col-sm-3
+		.panel.center
+			.panel-body
+				%h1.font-thin{style: "margin:0;"}
+					= current_user.total_points.round
+				%span.text-muted 
+					You've earned 
+					%span.bold 
+						#{current_user.total_points.round} 
+					points
+%h3 Leaderboards
+%table.table.table-leaderboards
 	%thead
-	%tbody
 		%tr
+			%td 
 			%td Name
-			%td Location
-			%td Videos Reviewed
-			%td Points Earned
-		- @users.each do |user|
+			%td Points
+	%tbody.bold
+		- @users.each_with_index do |user, index|
 			%tr
-				%td= link_to user.full_name, profile_path(user.username)
+				%td.leaderboard-rank
+					= index + 1
+				%td.leaderboard-avatar
+					%span
+						= image_tag('a1.jpg', class: "avatar thumb-sm")
+					= link_to user.full_name, profile_path(user.username)
 				- user.badges.each do |badge|
 					%td= badge.name
-				%td= Country.find(user.location).name
-				%td= user.review_count
-				%td= user.total_points.round
+				%td.leaderboard-points
+					= user.total_points.round

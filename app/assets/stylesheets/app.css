@@ -474,16 +474,30 @@ a:hover .caret-white {
 }
 
 .table > tbody > tr > td,
-.table > tfoot > tr > td {
-  padding: 8px 15px 5px;
-  border-top: 1px solid #e0e0e0;
+.table > tfoot > tr > td,
+.table > thead > tr > td {
+  padding: 20px 15px 18px;
+  border-bottom: 1px solid #e8ebed;
 }
 
 .table > thead > tr > th {
   padding: 8px 15px;
   border-bottom: 1px solid #d4d9de;
 }
-
+.table > thead > tr {
+  color: #a3b1ba;
+  font-size: 14px;
+}
+.table > tbody > tr {
+  color: #1b374f;
+  font-size: 14px;
+}
+.table > thead tr:last-child td:first-child {
+  border-top-left-radius:5px
+}
+.table > thead tr:last-child td:last-child {
+  border-top-right-radius:5px
+}
 .table-bordered {
   border-color: #eaeff0;
 }
