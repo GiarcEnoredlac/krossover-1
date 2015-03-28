@@ -1,0 +1,7 @@
+.wrapper-lg
+	- @conversations.each do |conversation|
+		%div
+			- if conversation.messages.count > 0
+				.messages
+					%h4= link_to conversation.messages.last.body, conversation
+					= conversation.messages.last.user.username

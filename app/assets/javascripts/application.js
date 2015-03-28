@@ -21,22 +21,6 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-	$('.circle').circleProgress({
-    value: 0.8,
-    fill: { gradient: ['#ff1e41', '#ff5f43'] }
-	}).on('circle-animation-progress', function(event, progress) {
-	    $(this).find('strong').html(parseInt(100 * progress) + '<i>%</i>');
-	});
-
-	// var height = $('#next-badge').height();
-	// $("#earnings-to-date").css('height', height);
-	// $("#current-badge").css('height', height);
-	// $('.scrollable').scrollTop($(document).height()); 
-
-	 
-});
-
 
 
 

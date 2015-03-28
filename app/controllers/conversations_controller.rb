@@ -1,5 +1,9 @@
 class ConversationsController < ApplicationController
-  before_action :correct_users, except: [:create]
+  before_action :correct_users, except: [:create, :index]
+
+  def index
+    @conversations = Conversation.involving(current_user)
+  end
 
 	def create
     if Conversation.between(params[:sender_id],params[:recipient_id]).present?
@@ -25,7 +29,7 @@ class ConversationsController < ApplicationController
   def correct_users
     @conversation = Conversation.find(params[:id])
     @reciever = interlocutor(@conversation)
-    unless @conversation.sender_id == current_user.id || @receiver == current_user
+    unless @conversation.sender_id == current_user.id || @conversation.recipient_id == current_user.id
       redirect_to root_path
     end
   end 

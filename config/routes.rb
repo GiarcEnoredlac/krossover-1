@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   # Leaderboards url
   get 'leaderboards', to: 'leaderboards#index'
 
+  get 'inbox', to: 'conversations#index'
   resources :conversations do 
     resources :messages
   end

@@ -21,4 +21,9 @@ $(document).ready(function() {
        $('.scrollable').scrollTop($('.media-list').height());  
     }
 	});
+
+ 	$(".media-list").bind("DOMNodeInserted",function(){
+    $('.scrollable').scrollTop($('.media-list').height());  
+	});
 });
+
