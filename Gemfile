@@ -6,7 +6,6 @@ gem 'haml-rails'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
-gem 'pg'
 gem 'faker'
 gem 'fabrication'
 gem 'turbolinks'
@@ -14,13 +13,12 @@ gem 'jquery-turbolinks'
 gem 'nokogiri'
 gem 'paperclip'
 gem 'merit'
-gem 'bcrypt'
 gem 'devise'
 gem 'faye-rails'
 gem 'bower-rails'
+gem 'thin'
 
 group :development do
-  gem 'thin'
   gem "better_errors"
   gem "binding_of_caller"
 end
@@ -40,5 +38,6 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 
