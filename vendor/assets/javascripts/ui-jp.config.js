@@ -1,7 +1,7 @@
 // lazyload config
 
 var jp_config = {
-  easyPieChart:   [   '/assets/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'],
+  easyPieChart:   [   '../assets/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js'],
   sparkline:      [   '/assets/jquery.sparkline/dist/jquery.sparkline.retina.js'],
   plot:           [   '/assets/flot/jquery.flot.js',
                       '/assets/flot/jquery.flot.pie.js', 

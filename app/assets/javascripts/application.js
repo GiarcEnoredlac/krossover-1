@@ -18,10 +18,6 @@
 //= require messages
 //= require app
 //= require app.plugin
-//= require jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js
-//= require ui-load
-//= require ui-jp.config
-//= require ui-jp
 //= require turbolinks
 //= require_tree .
 
