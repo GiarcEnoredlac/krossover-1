@@ -1,39 +1,10 @@
 .col-md-3
 	.panel.panel-default
-		.panel-heading.font-bold
+		.panel-heading
 			Leaderboard
 		%ul.list-group.list-group-lg.m-b-none
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a1.jpg"}/
-				%a{:href => ""} Damon Parker
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a2.jpg"}/
-				%a{:href => ""} Joe Waston
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a3.jpg"}/
-				%a{:href => ""} Jannie Dvis
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a4.jpg"}/
-				%a{:href => ""} Emma Welson
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a4.jpg"}/
-				%a{:href => ""} Ninja Duck
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a4.jpg"}/
-				%a{:href => ""} Craig Calde
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a4.jpg"}/
-				%a{:href => ""} Petey Casanova
-			%li.list-group-item
-				%a.thumb-sm.m-r{:href => ""}
-					%img.r.r-2x{:src => "img/a4.jpg"}/
-				%a{:href => ""} B Money
-	
-
+			- 8.times do 
+				%li.list-group-item
+					%a.thumb-sm.m-r{:href => ""}
+						= image_tag('a1.jpg', class: 'r r-2x')
+					%a{:href => ""} Damon Parker

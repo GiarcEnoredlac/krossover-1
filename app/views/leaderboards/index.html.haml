@@ -2,13 +2,17 @@
 	.col-sm-3
 		.panel.center
 			.panel-body
-				%h1.font-thin{style: "margin:0;"}
-					= current_user.total_points.round
-				%span.text-muted 
-					You've earned 
-					%span.bold 
-						#{current_user.total_points.round} 
-					points
+				- if current_user.reviews.count > 0
+					%h1.font-thin{style: "margin:0;"}
+						= current_user.total_points.round
+					%span.text-muted 
+						You've earned 
+						%span.bold 
+							#{current_user.total_points.round} 
+						points
+				- else
+					%h1.font-thin{style: "margin:0;"}
+						0
 %h3 Leaderboards
 %table.table.table-leaderboards
 	%thead
@@ -23,7 +27,7 @@
 					= index + 1
 				%td.leaderboard-avatar
 					%span
-						= image_tag('a1.jpg', class: "avatar thumb-sm")
+						= image_tag(user.profile_image.url(:thumb), class: "avatar thumb-sm")
 					= link_to user.full_name, profile_path(user.username)
 				- user.badges.each do |badge|
 					%td= badge.name

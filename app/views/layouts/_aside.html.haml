@@ -1,23 +1,34 @@
 %aside#aside.app-aside.hidden-xs.bg-black.bold{:style => "position:fixed; height:100%;"}
   .aside-wrap
+    .clearfix.wrapper.dk.nav-user.hidden-xs
+      = link_to profile_path(current_user.username) do
+        %span.thumb.avatar.pull-left.m-r
+          = image_tag(current_user.profile_image.url(:thumb), class: "dker")
+          %i.on.md.b-black
+        %span.hidden-nav-xs.clear
+          %span.block.m-t-xs
+            %strong.font-bold.text-lt= current_user.full_name
     .navi-wrap
       %nav.navi.clearfix
-        %ul.nav
-          %li.hidden-folded.m-b-sm.text-xs.text-muted.uppercase.padder.m-t.m-b-sm
-            %span Menu
+        %ul.nav{style: 'margin-top:15px;'}
           %li
             = link_to dashboard_path, class: "auto", title: "Dashboard" do
+              %i.i.i-statistics.icon
               %span Dashboard
           %li
+            = link_to profile_path(current_user.username), class: "auto" do
+              %i.i.i-user2.icon
+              %span Profile
+          %li
             = link_to inbox_path do
+              %i.i.i-mail.icon
               %span Inbox
           %li
             = link_to leaderboards_path, class: "auto", title: "Market" do
+              %i.i.i-graph.icon
               %b.badge.bg-info.pull-right
               %span Leaderboards
           %li
-            %a.auto{:href => ""}
-              %span Calendar
-          %li
-            = link_to "contacts_path", class: "auto", title: "Contacts" do
-              %span Contacts
+            = link_to 'inbox_path' do
+              %i.i.i-mail.icon
+              %span Support

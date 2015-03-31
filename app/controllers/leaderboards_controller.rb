@@ -1,9 +1,7 @@
 class LeaderboardsController < ApplicationController
 
 	def index
-		@users = User.joins(:reviews).select("users.*").group('reviews.user_id, users.id').order("count(reviews.user_id) DESC")
+		@users = User.top_25_in_points
 	end
 
 end
-# @albums = Album.joins(:reviews).select("*, avg(reviews.rating) as average_rating").group("albums.id").order("average_rating DESC")
-# @albums = Album.joins(:reviews).select("albums.*, avg(reviews.rating) as average_rating").group("albums.id").order("average_rating DESC")

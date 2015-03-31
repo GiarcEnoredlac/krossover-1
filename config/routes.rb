@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:new, :create]
 
-  root to: "static_pages#index"
-
   devise_for :users, controllers: { registrations: "users/registrations", sessions: "users/sessions" }
 
   devise_scope :user do
@@ -13,6 +11,8 @@ Rails.application.routes.draw do
 
     get  '/login', to: 'users/sessions#new', as: :login   
     get  '/logout', to: 'users/sessions#destroy', as: :logout
+
+    root to: "users/sessions#new"
   end  
 
   devise_for :admins, controllers: { registrations: "admins/registrations", sessions: "admins/sessions" }

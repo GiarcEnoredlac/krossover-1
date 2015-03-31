@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include ApplicationHelper
   scope :featured, order('reviews_count DESC')
+  scope :top_25_in_points, -> { joins(:reviews).select("users.*").
+    group('reviews.user_id, users.id').order("count(reviews.user_id) DESC").limit(25) }
 
   has_merit
 
@@ -18,11 +20,12 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates_presence_of :first_name, :last_name
   
-  has_attached_file :profile_image, styles: {
+  has_attached_file :profile_image, :default_url => "a0.jpg", styles: {
 		medium: "300x200#",
     small: "253x170#",
     thumb: "140x140#"
   }
+  validates_attachment_content_type :profile_image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   def full_name
     "#{self.first_name} #{self.last_name}"

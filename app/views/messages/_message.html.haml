@@ -1,6 +1,6 @@
 .m-b-lg{"data-id" => "#{message.id}"}
   %a.pull-left.thumb-sm.avatar{:href => ""}
-    = image_tag('a1.jpg')
+    = image_tag(message.user.profile_image.url(:thumb))
   .m-l-xxl
     .pos-rlt
       %p{:style => "font-weight:bold; margin:0;"}

@@ -22,5 +22,13 @@ module Krossover
     # config.i18n.default_locale = :de
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware, extensions: [CsrfProtection.new], mount: '/faye', :timeout => 25
+
+    config.to_prepare do
+      Devise::SessionsController.layout "devise"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
+      Devise::ConfirmationsController.layout "devise"
+      Devise::UnlocksController.layout "devise"            
+      Devise::PasswordsController.layout "devise"        
+    end
   end
 end

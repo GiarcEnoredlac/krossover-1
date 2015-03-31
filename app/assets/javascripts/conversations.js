@@ -25,5 +25,9 @@ $(document).ready(function() {
  	$(".media-list").bind("DOMNodeInserted",function(){
     $('.scrollable').scrollTop($('.media-list').height());  
 	});
+
+	setTimeout(function () {
+		$('.alert').fadeOut('slow');
+	}, 1000);
 });
 

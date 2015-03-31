@@ -1,65 +1,18 @@
-= link_to "Send Message", 
-	{action: :create, controller: :conversations, sender_id: current_user.id, recipient_id: @user.id}, method: :post
-%p
-	Name: #{@user.full_name}
-%p
-	Username: #{@user.username}
-%p
-	Email: #{@user.email}
-%p
-	Description: #{@user.description}
-%p
-	Location: #{Country.where(id: @user.location).first.name}
-%p
-	Videos Reviewed: #{@user.reviews.count}
-%p
-	Points Earned: #{@user.total_points.round}
-%p
-	Badges: #{@user.badges}
-%p 
-	Games Reviewed Table
-%table.table
-	%thead
-		%tr
-			%td Game Title
-			%td Game Length (hrs)
-			%td Review Length (hrs)
-			%td Length %
-			%td Number of Plays
-			%td Correct Plays
-			%td Correct Plays %
-			%td Points Earned
-	%tbody
-		- @user.reviews.each do |review|
-			%tr
-				%td= review.title
-				%td= review.game_length
-				%td= review.review_length
-				%td= game_length_percentage(review)
-				%td= review.number_of_plays
-				%td= review.correct_plays
-				%td= correct_play_percentage(review)
-				%td
-		%tr
-			%td
-			%td= @user.sum_game_length
-			%td= @user.sum_review_length
-			%td= number_to_percentage(@user.total_game_length_percentage, precision: 0)
-			%td= @user.sum_number_of_plays
-			%td= @user.sum_correct_plays
-			%td= number_to_percentage(@user.total_plays_percentage, precision: 0)
-			%td= @user.total_points
 %div{:style => "background: #0A3E5B"}
 	.wrapper-lg
-		.row.m-t
-			.col-xs-3
-				%a.thumb-lg.pull-left.m-r{:href => "#"}
-				= image_tag('a0.jpg', class: "img-circle img-responsive")
-			.col-xs-9.profile-text
+		.row
+			.col-xs-2
+				%a.thumb-lg.pull-left.m-r{:href => "#"} 
+				= image_tag(@user.profile_image.url(:thumb), class: "img-circle img-responsive")
+			.col-xs-8.profile-text
 				%h2= "#{@user.full_name}"
 				%h4= Country.where(id: @user.location).first.name
 				%h4 Current Badge: Pickup
+				%p Points Earned: #{@user.total_points.round}
 				%p= @user.description
+			.col-xs-2
+				= link_to "Send Message", 
+					{action: :create, controller: :conversations, sender_id: current_user.id, recipient_id: @user.id}, method: :post, class: "btn btn-success btn-block"
 .list-group-item
 	%h3.profile-header Progress to Next Badge
 	.progress
