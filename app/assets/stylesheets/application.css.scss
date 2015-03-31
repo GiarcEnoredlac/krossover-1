@@ -18,17 +18,17 @@
 */
 @font-face{
     font-family:'AvenirLT-Medium';
-    src:font-url('/assets/avenirlt-medium.eot');
-    src:font-url('/assets/avenirlt-medium.eot?#iefix') format("embedded-opentype"),
-        font-url('/assets/avenirlt-medium.woff') format("woff"),
-        font-url('/assets/avenirlt-medium.ttf') format("truetype")
+    src:url('/assets/avenirlt-medium.eot');
+    src:url('/assets/avenirlt-medium.eot?#iefix') format("embedded-opentype"),
+        url('/assets/avenirlt-medium.woff') format("woff"),
+        url('/assets/avenirlt-medium.ttf') format("truetype")
 }
 @font-face{
     font-family:'AvenirLT-Black';
-    src:font-url('/assets/avenirlt-black.eot');
-    src:font-url('/assets/avenirlt-black.eot?#iefix') format("embedded-opentype"),
-        font-url('/assets/avenirlt-black.woff') format("woff"),
-        font-url('/assets/avenirlt-black.ttf') format("truetype")
+    src:url('/assets/avenirlt-black.eot');
+    src:url('/assets/avenirlt-black.eot?#iefix') format("embedded-opentype"),
+        url('/assets/avenirlt-black.woff') format("woff"),
+        url('/assets/avenirlt-black.ttf') format("truetype")
 }
 .header a {
 	color: #333;
