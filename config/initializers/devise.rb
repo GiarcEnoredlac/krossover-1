@@ -13,6 +13,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
+  config.secret_key = 'a566eb2593dbd081cfd61ff4b1dc61c05e252d03cfc64e7d6e792aa0ce8cfe7758e056c723345731ca39c59bb8b2b7643a54b2b8d175156d4da6a43f4829a782'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
