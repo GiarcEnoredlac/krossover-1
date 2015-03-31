@@ -1,19 +1,16 @@
 class User < ActiveRecord::Base
   include ApplicationHelper
-  scope :featured, order('reviews_count DESC')
-  scope :top_25_in_points, -> { joins(:reviews).select("users.*").
-    group('reviews.user_id, users.id').order("count(reviews.user_id) DESC").limit(25) }
-
-  has_merit
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_merit
+
+  scope :top_25_in_points, -> { joins(:reviews).select("users.*").
+    group('reviews.user_id, users.id').order("count(reviews.user_id) DESC").limit(25) }
 
   has_many :conversations, :foreign_key => :sender_id
-
   has_many :reviews
   
   validates :username, presence: true, uniqueness: true
