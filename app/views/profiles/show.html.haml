@@ -6,9 +6,11 @@
 				= image_tag(@user.profile_image.url(:thumb), class: "img-circle img-responsive")
 			.col-xs-8.profile-text
 				%h2= "#{@user.full_name}"
-				%h4= Country.where(id: @user.location).first.name
+				- if current_user.location
+					%h4= Country.where(id: @user.location).first.name
 				%h4 Current Badge: Pickup
-				%p Points Earned: #{@user.total_points.round}
+				- if current_user.reviews_count > 0
+					%p Points Earned: #{@user.points}
 				%p= @user.description
 			.col-xs-2
 				= link_to "Send Message", 

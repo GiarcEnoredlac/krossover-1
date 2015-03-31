@@ -4,11 +4,11 @@
 			.panel-body
 				- if current_user.reviews.count > 0
 					%h1.font-thin{style: "margin:0;"}
-						= current_user.total_points.round
+						= current_user.points
 					%span.text-muted 
 						You've earned 
 						%span.bold 
-							#{current_user.total_points.round} 
+							= current_user.points
 						points
 				- else
 					%h1.font-thin{style: "margin:0;"}
@@ -29,7 +29,5 @@
 					%span
 						= image_tag(user.profile_image.url(:thumb), class: "avatar thumb-sm")
 					= link_to user.full_name, profile_path(user.username)
-				- user.badges.each do |badge|
-					%td= badge.name
 				%td.leaderboard-points
-					= user.total_points.round
+					= user.points

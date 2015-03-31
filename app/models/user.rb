@@ -61,7 +61,6 @@ class User < ActiveRecord::Base
     total_plays_percentage * 0.3 + total_game_length_percentage * 0.3 + max
   end
 
-
 end
 
 

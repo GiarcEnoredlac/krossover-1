@@ -20,8 +20,7 @@ User.create(first_name: "Michael",
 						email: "mmcdevi1@gmail.com",
 						password: "password",
 						description: Faker::Lorem.paragraph(2),
-						location: 1,
-						videos_reviewed: 100 )
+						location: 1 )
 
 100.times do
 	User.create(first_name: Faker::Name.first_name, 
@@ -30,8 +29,7 @@ User.create(first_name: "Michael",
 							email: Faker::Internet.email,
 							password: "password",
 							description: Faker::Lorem.paragraph(2),
-							location: rand(1..3),
-							videos_reviewed: ( rand(1..500) ) 
+							location: rand(1..3) ) 
 							)
 	end
 

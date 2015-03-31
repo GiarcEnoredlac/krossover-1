@@ -12,12 +12,13 @@ class ReviewsController < ApplicationController
 	end
 
 	def new
-		@review = Review.new
+		@review = current_user.reviews.new
 	end
 
 	def create
 		@review = current_user.reviews.new(reviews_params)
 		if @review.save
+			current_user.update(points: current_user.total_points)
 			redirect_to :back
 		else
 			render 'new'
