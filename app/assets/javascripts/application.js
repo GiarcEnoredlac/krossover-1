@@ -18,6 +18,9 @@
 //= require messages
 //= require app
 //= require app.plugin
+//= require ui-load
+//= require ui-jp.config
+//= require ui-jp
 //= require turbolinks
 //= require_tree .
 

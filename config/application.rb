@@ -24,7 +24,7 @@ module Krossover
     
     config.middleware.delete Rack::Lock
     config.middleware.use FayeRails::Middleware, extensions: [CsrfProtection.new], mount: '/faye', :timeout => 25
-
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
     config.to_prepare do
       Devise::SessionsController.layout "devise"
       Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
