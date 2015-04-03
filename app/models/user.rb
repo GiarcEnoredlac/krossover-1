@@ -7,8 +7,12 @@ class User < ActiveRecord::Base
 
   has_merit
 
-  scope :top_25_in_points, -> { joins(:reviews).select("users.*").
+  scope :top_25_in_review, -> { joins(:reviews).select("users.*").
     group('reviews.user_id, users.id').order("count(reviews.user_id) DESC").limit(25) }
+
+  scope :top_25_in_points, -> { order("leaderboard_points desc").limit(25) }
+
+  scope :max_video_reviewed, -> { order("reviews_count desc").first }
 
   has_many :conversations, :foreign_key => :sender_id
   has_many :reviews
@@ -57,7 +61,7 @@ class User < ActiveRecord::Base
   end
 
   def total_points
-    max = (self.reviews.count / max_video_reviewed.to_f) * 40.to_f
+    max = (review_count / User.max_video_reviewed.reviews_count) * 40
     total_plays_percentage * 0.3 + total_game_length_percentage * 0.3 + max
   end
 

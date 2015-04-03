@@ -2,13 +2,13 @@
 	.col-sm-3
 		.panel.center
 			.panel-body
-				- if current_user.reviews.count > 0
+				- if current_user.reviews_count > 0
 					%h1.font-thin{style: "margin:0;"}
-						= current_user.points
+						= current_user.leaderboard_points
 					%span.text-muted 
 						You've earned 
 						%span.bold 
-							= current_user.points
+							= current_user.leaderboard_points
 						points
 				- else
 					%h1.font-thin{style: "margin:0;"}
@@ -30,4 +30,4 @@
 						= image_tag(user.profile_image.url(:thumb), class: "avatar thumb-sm")
 					= link_to user.full_name, profile_path(user.username)
 				%td.leaderboard-points
-					= user.points
+					= user.leaderboard_points

@@ -29,16 +29,54 @@ User.create(first_name: "Michael",
 							email: Faker::Internet.email,
 							password: "password",
 							description: Faker::Lorem.paragraph(2),
-							location: rand(1..3) ) 
+							location: rand(1..3) 
 							)
 	end
 
 1000.times do 
+		user_id = rand(1..90)
 		Review.create(title: "Basketball Game",
-								  user_id: rand(1..90),
+								  user_id: user_id,
 								  game_length: rand(1..5),
 								  review_length: rand(5..10),
 								  number_of_plays: rand(50..70),
 								  correct_plays: rand(30..50)
 								  )
+		user = User.find(user_id)
+		user.update(leaderboard_points: user.total_points)
 	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
