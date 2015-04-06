@@ -18,10 +18,10 @@
 			.col-md-4
 				.panel.panel-default#earnings-to-date
 					.panel-heading
-						Earnings to Date
+						Games Completed
 					.panel-body.text-center
 						.text-primary-dk.font-thin.h1
-							%span $12,670
+							%span= current_user.reviews_count
 		= render 'game_history_chart'
 	= render 'leaderboard'
 

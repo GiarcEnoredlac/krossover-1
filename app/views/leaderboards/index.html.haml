@@ -31,3 +31,20 @@
 					= link_to user.full_name, profile_path(user.username)
 				%td.leaderboard-points
 					= user.leaderboard_points
+		%tr
+			%td
+			%td ...
+			%td
+		%tr
+			%td.leaderboard-rank
+				3
+			%td.leaderboard-avatar
+				%span
+					= image_tag(current_user.profile_image.url(:thumb), class: "avatar thumb-sm")
+				= link_to current_user.full_name, profile_path(current_user.username)
+			%td.leaderboard-points
+				= current_user.leaderboard_points
+		%tr.last-row
+			%td
+			%td
+			%td
