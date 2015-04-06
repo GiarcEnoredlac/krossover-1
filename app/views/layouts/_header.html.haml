@@ -11,19 +11,8 @@
             %i.i.i-arrow-down5
           / dropdown
           %ul.dropdown-menu.animated.fadeInRight.w
-            %li.wrapper.b-b.m-b-sm.bg-light.m-t-n-xs
-              %div
-                %p 300mb of 500mb used
-              .progress.progress-xs.m-b-none.dker
-                .progress-bar.progress-bar-info{"data-original-title" => "50%", "data-toggle" => "tooltip", :style => "width: 50%"}
             %li
-              = link_to "Settings", edit_path
-            %li
-              = link_to "Profile", profile_path(current_user.username)
-            %li
-              %a{"ui-sref" => "app.docs"}
-                %span.label.bg-info.pull-right new
-                Help
+              = link_to "Edit Profile", edit_path
             %li.divider
             %li
               = link_to "Logout", logout_path
