@@ -11,6 +11,8 @@
 				%h4= "Current Badge:" 
 				- if @user.badges.count > 0
 					= image_tag(@user.badges.last.custom_fields[:img_url])
+				- else
+					You have no badges earned
 				- if current_user.reviews_count > 0
 					%p Points Earned: #{@user.leaderboard_points}
 				%p= @user.description
