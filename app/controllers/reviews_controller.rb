@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
 	def create
 		@review = current_user.reviews.new(reviews_params)
 		if @review.save
-			current_user.update(leaderboard_points: current_user.total_points)
+			current_user.update(leaderboard_points: @review.points_earned)
 			redirect_to :back
 		else
 			render 'new'
@@ -33,7 +33,11 @@ class ReviewsController < ApplicationController
 
 	private
 	def reviews_params
-		params.require(:review).permit(:user_id, :title)
+		params.require(:review).permit(:title, 
+																	 :game_length, 
+																	 :review_length, 
+																	 :number_of_plays, 
+																	 :correct_plays)
 	end
 
 end

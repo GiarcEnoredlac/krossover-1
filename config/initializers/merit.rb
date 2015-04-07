@@ -24,70 +24,70 @@ Merit::Badge.create!(
   name: "Pickup",
   level: 1,
   description: "Analyze 1 Game",
-  custom_fields: { img_url: '/images/pickup.png' }
+  custom_fields: { img_url: 'pickup.png' }
 )
 Merit::Badge.create!(
   id: 2,
   name: "Varsity",
   level: 2,
   description: "Analyze 5 Game",
-  custom_fields: { img_url: '/images/varsity.png' }
+  custom_fields: { img_url: 'varsity.png' }
 )
 Merit::Badge.create!(
   id: 3,
   name: "Division 3",
   level: 3,
   description: "Analyze 10 Game",
-  custom_fields: { img_url: '/images/division_3.png' }
+  custom_fields: { img_url: 'division_3.png' }
 )
 Merit::Badge.create!(
   id: 4,
   name: "Division 2",
   level: 4,
   description: "Analyze 15 Game",
-  custom_fields: { img_url: '/images/division_2.png' }
+  custom_fields: { img_url: 'division_2.png' }
 )
 Merit::Badge.create!(
   id: 5,
   name: "Division 1",
   level: 5,
   description: "Analyze 20 Game",
-  custom_fields: { img_url: '/images/division_1.png' }
+  custom_fields: { img_url: 'division_1.png' }
 )
 Merit::Badge.create!(
   id: 6,
   name: "Rookie",
   level: 6,
   description: "Analyze 25 Game",
-  custom_fields: { img_url: '/images/rookie.png' }
+  custom_fields: { img_url: 'rookie.png' }
 )
 Merit::Badge.create!(
   id: 7,
   name: "Veteran",
   level: 7,
   description: "Analyze 30 Game",
-  custom_fields: { img_url: '/images/veteran.png' }
+  custom_fields: { img_url: 'veteran.png' }
 )
 Merit::Badge.create!(
   id: 8,
   name: "Captain",
   level: 8,
   description: "Analyze 35 Game",
-  custom_fields: { img_url: '/images/captain.png' }
+  custom_fields: { img_url: 'captain.png' }
 )
 Merit::Badge.create!(
   id: 9,
   name: "Allstar",
   level: 9,
   description: "Analyze 40 Game",
-  custom_fields: { img_url: '/images/allstar.png' }
+  custom_fields: { img_url: 'allstar.png' }
 )
 Merit::Badge.create!(
   id: 10,
   name: "MVP",
   level: 10,
   description: "Analyze 100 Game",
-  custom_fields: { img_url: '/images/mvp.png' }
+  custom_fields: { img_url: 'mvp.png' }
 )
 
 

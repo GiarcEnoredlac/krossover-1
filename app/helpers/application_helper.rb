@@ -8,8 +8,8 @@ module ApplicationHelper
 		end
 	end
 
-	# def max_video_reviewed
-	# 	User.joins(:reviews).select("users.*").group('reviews.user_id, users.id').order("count(reviews.user_id) DESC").first.reviews.count
-	# end
+	def max_video_reviewed
+		User.joins(:reviews).select("users.*").group('reviews.user_id, users.id').order("count(reviews.user_id) DESC").first.reviews.count
+	end
 
 end

@@ -8,9 +8,10 @@
 				%h2= "#{@user.full_name}"
 				- if current_user.location
 					%h4= Country.where(id: @user.location).first.name
-				%h4 Current Badge: Pickup
+				%h4= "Current Badge:" 
+				= image_tag(@user.badges.last.custom_fields[:img_url])
 				- if current_user.reviews_count > 0
-					%p Points Earned: #{@user.points}
+					%p Points Earned: #{@user.leaderboard_points}
 				%p= @user.description
 			.col-xs-2
 				= link_to "Send Message", 

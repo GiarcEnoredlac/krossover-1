@@ -7,7 +7,7 @@
 						.panel-heading
 							Current Badge
 						.panel-body.text-center
-							= image_tag('mvp.png', class: "img-responsive")
+							= image_tag(current_user.badges.last.custom_fields[:img_url], class: "img-responsive")
 			.col-md-4
 				.panel.panel-default#next-badge
 					.panel-heading

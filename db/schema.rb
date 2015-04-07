@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402163721) do
+ActiveRecord::Schema.define(version: 20150407181709) do
 
   create_table "admins", force: true do |t|
     t.string   "full_name"
@@ -108,10 +108,10 @@ ActiveRecord::Schema.define(version: 20150402163721) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "game_length"
-    t.integer  "review_length"
-    t.integer  "number_of_plays"
-    t.integer  "correct_plays"
+    t.integer  "game_length",     default: 0
+    t.integer  "review_length",   default: 0
+    t.integer  "number_of_plays", default: 0
+    t.integer  "correct_plays",   default: 0
   end
 
   create_table "sashes", force: true do |t|

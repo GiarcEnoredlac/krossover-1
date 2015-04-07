@@ -1,3 +1,14 @@
 = form_for(@review) do |f|
-	= f.text_field :title
+	%div
+		= f.label :game_length
+		= f.text_field :game_length
+	%div
+		= f.label :review_length
+		= f.text_field :review_length
+	%div
+		= f.label :number_of_plays
+		= f.text_field :number_of_plays
+	%div
+		= f.label :correct_plays
+		= f.text_field :correct_plays
 	= f.submit

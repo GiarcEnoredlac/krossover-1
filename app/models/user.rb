@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
   scope :top_25_in_points, -> { order("leaderboard_points desc").limit(25) }
 
-  scope :max_video_reviewed, -> { order("reviews_count desc").first }
+  # scope :max_video_reviewed, -> { order("reviews_count desc").first }
 
   has_many :conversations, :foreign_key => :sender_id
   has_many :reviews
@@ -30,39 +30,6 @@ class User < ActiveRecord::Base
 
   def full_name
     "#{self.first_name} #{self.last_name}"
-  end
-
-  def review_count
-    self.reviews.count
-  end
-
-  def sum_game_length
-    self.reviews.sum(:game_length)
-  end
-
-  def sum_review_length
-    self.reviews.sum(:review_length)
-  end
-
-  def sum_number_of_plays
-    self.reviews.sum(:number_of_plays)
-  end
-
-  def sum_correct_plays
-    self.reviews.sum(:correct_plays)
-  end
-
-  def total_game_length_percentage
-    self.sum_game_length / self.sum_review_length.to_f * 100
-  end
-  
-  def total_plays_percentage
-    self.sum_correct_plays / self.sum_number_of_plays.to_f * 100
-  end
-
-  def total_points
-    max = (review_count / User.max_video_reviewed.reviews_count) * 40
-    total_plays_percentage * 0.3 + total_game_length_percentage * 0.3 + max
   end
 
 end
