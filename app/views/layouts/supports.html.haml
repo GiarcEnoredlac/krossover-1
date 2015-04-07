@@ -7,9 +7,5 @@
       = render 'layouts/header'
       = render 'layouts/aside'
       #content.app-content{:role => "main"}
-        .app-content-body{style: "height:100%;"}
-          .hbox.hbox-auto-xs.hbox-auto-sm
-            .col
-              .wrapper-lg{style: "height:100%;"}
-                = yield
+        = yield
       = render 'layouts/footer'
