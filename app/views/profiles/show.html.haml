@@ -26,13 +26,15 @@
 			%span.sr-only 45% Complete
 .badges
 	.list-group-item
-		%h3.list-group-item-heading.profile-header Badges Earned
-		.row
-			- 10.times do 
-				.col-xs-3
-					%h3.list-group-item-heading Most Valuable Player
-					= image_tag('mvp.png', class: "img-responsive")
-			
+		- if @user.badges.count > 0
+			%h3.list-group-item-heading.profile-header Badges Earned
+			.row
+				- @user.badges.each do |badge|
+					.col-xs-3
+						%h3.list-group-item-heading= badge.name
+						= image_tag(badge.custom_fields[:img_url])
+		- else
+			You have not earned any badges
 
 
 

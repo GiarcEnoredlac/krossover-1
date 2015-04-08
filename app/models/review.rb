@@ -1,6 +1,8 @@
 class Review < ActiveRecord::Base
 	belongs_to :user, counter_cache: true
 
+  validates_presence_of :game_length, :review_length, :number_of_plays, :correct_plays
+
 	def review_count
     self.user.reviews_count
   end
