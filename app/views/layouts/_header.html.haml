@@ -3,6 +3,10 @@
     .nav.navbar-nav.hidden-xs
       = link_to root_path, class: "navbar-brand text-lt" do
         = image_tag('krossover_logo.png', class: "img-responsive")
+    = form_tag search_profiles_path, class: "navbar-form navbar-left for-search" do
+      .form-group.header-search
+        %input.form-control(name="search_term" type="text" placeholder="Search for other users here")
+      %button.btn.btn-default(type="submit") Search
     %ul.nav.navbar-nav.navbar-right
       - if current_user
         %li.dropdown

@@ -31,6 +31,12 @@ Rails.application.routes.draw do
   get 'u', to: 'profiles#index', as: 'profile_index'
   get 'u/:id', to: 'profiles#show', as: 'profile'
 
+  resources :profiles, only: [:index, :show] do 
+    collection do 
+      post 'search', to: "profiles#search"
+    end
+  end
+
   # Leaderboards url
   get 'leaderboards', to: 'leaderboards#index'
 

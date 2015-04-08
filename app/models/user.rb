@@ -32,6 +32,11 @@ class User < ActiveRecord::Base
     "#{self.first_name} #{self.last_name}"
   end
 
+  def self.search_by_username(search_term)
+    return [] if search_term.blank?
+    where("username LIKE ?", "%#{search_term}%").order("created_at DESC")
+  end
+
 end
 
 
